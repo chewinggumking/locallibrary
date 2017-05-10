@@ -1,18 +1,21 @@
 {% extends "base.html" %}
 
-  {% block title %} {{author.last_name}} {% endblock title %}
+  {% block title %}{{author.first_name}} {{author.last_name}} {% endblock title %}
 
 {% block content %}
 
-<h1>Author Details</h1>
-  <p><strong>Name: </strong>{{author.first_name}} {{author.last_name}}</p>
-  <p><strong>Date of Birth: </strong>{{author.date_of_birth}}</p>
-  {% if author.get_books %}
-    <p>This author has written these books</p>
-      {% for book in author.get_books %}
-       <p><a href="{{book.get_absolute_url}}">{{book}} </a></p>
-      {% endfor %}
-
-  {% endif %}
+    <h1>Author Details </h1>
+      <p><strong>Name: </strong>{{author.first_name}} {{author.last_name}}</p>
+      <p><strong>Date of Birth: </strong>{{author.date_of_birth}}</p>
+        {% if author.get_books %}
+        <div class="list-group">
+            <p class="list-group-item list-group-item-info mylistheader"><strong>This author has written these books</strong></p>
+              {% for book in author.get_books %}
+                <a href="{{book.get_absolute_url}}" class="list-group-item list-group-item-warning">{{book}}</a>
+              {% endfor %}
+        </div>
+        {% else %}
+          <p class="alert alert-danger"><strong>We have no books from this author.</strong></p>
+        {% endif %}
 
 {% endblock content %}
