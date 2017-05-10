@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-  {% block title %} {{page_title}} {% endblock title %}
+  {% block title %} {{book.title|truncatewords:2}} {% endblock title %}
 
 {% block content %}
 
