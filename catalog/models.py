@@ -66,6 +66,10 @@ class Author(models.Model):
 
         return reverse ('author-detail', args=[str(self.id)])
 
+    def get_books(self):
+        book_list = Book.objects.filter(author__id=self.id)
+        return (book_list)
+
     def __str__(self):
 
         return '%s, %s' %(self.last_name, self.first_name)

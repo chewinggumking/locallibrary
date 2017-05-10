@@ -34,7 +34,16 @@ class BookListView(generic.ListView):
 class BookDetailView(generic.DetailView):
     model = Book
 
+class AuthorListView(generic.ListView):
+    model = Author
 
+    def get_context_data(self, **kwargs):
+        context = super(AuthorListView, self).get_context_data(**kwargs)
+        context['page_title'] = 'Author List'
+        return context
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
 
 
 
