@@ -8,8 +8,15 @@
       <p><strong>Name: </strong>{{author.first_name}} {{author.last_name}}</p>
       <p><strong>Date of Birth: </strong>{{author.date_of_birth}}</p>
         {% if author.get_books %}
+
         <div class="list-group">
-            <p class="list-group-item list-group-item-info mylistheader"><strong>This author has written these books</strong></p>
+            <p class="list-group-item list-group-item-info mylistheader">
+              {% if author.get_books.count > 1%} <strong>This author has written {{author.get_books.count}} books</strong>
+              {% else %}
+              <strong>This author has written {{author.get_books.count}} book</strong>
+              {% endif %}
+            </p>
+
               {% for book in author.get_books %}
                 <a href="{{book.get_absolute_url}}" class="list-group-item list-group-item-warning">{{book}}</a>
               {% endfor %}
