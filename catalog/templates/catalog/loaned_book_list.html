@@ -9,9 +9,12 @@
       <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
       <a href="{{bookinst.book.get_absolute_url}}">{{bookinst.book.title}}</a>
            {{bookinst.due_back}} -|- {{bookinst.borrower.first_name}} {{bookinst.borrower.last_name}}
+           {% if perms.catalog.can_mark_as_returned %}<a href="{% url 'renew-book-librarian' bookinst.id %}">Renew</a>
+           {% endif %}
       </li>
 
 
       {% endfor %}
     {% endif %}
 {% endblock content %}
+ 

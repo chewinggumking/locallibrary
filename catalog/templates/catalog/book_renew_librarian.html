@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+      <h1> Renew: {{bookinst.book.title}}</h1>
+      <p> Borrower: {{bookinst.borrower.first_name}} {{bookinst.borrower.last_name}}</p>
+      <p {% if bookinst.is_overdue %} class = "text-dander"{% endif %}>Due Date: {{bookinst.due_back}}</p>
+
+          <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+              {{form}}
+            </table>
+            <input type="submit" value="SUBMIT"/>
+          </form>
+{% endblock content %}
