@@ -8,15 +8,15 @@
 
    {% if author_list %}
    <table class="table table-bordered table-hover">
-          <tr class="table-head">
-          <th >Author</th>
-          <th >Update</th>
-          <th >Delete</th>
+          <tr >
+          <th class="table-head">Author</th>
+          <th class="table-head">Update</th>
+          <th class="table-head">Delete</th>
           </tr>
 
      {% for author in author_list %}
     <tr>
-       <td><a href="{{ author.get_absolute_url }}">{{ author.first_name }} {{author.last_name}}
+       <td><a href="{{ author.get_absolute_url }}" class="author-list">{{ author.first_name }} {{author.last_name}}
        <span class="badge">{{author.get_books.count}}</span>
        </a>
        </td>

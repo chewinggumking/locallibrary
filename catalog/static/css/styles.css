@@ -5,7 +5,7 @@
 }
 
 .mysidebar {
-  background-color: #ffba8b;
+  background-color: #d0d0d0;
 
 }
 
@@ -20,9 +20,18 @@
 
 .table-head {
   text-align: center;
-
 }
 
-.badge {
-  padding-left: 20em;
+.author-list{
+  color: #d9534f;
+  }
+
+  .author-list:hover{
+    color: #25c117;
+    }
+
+
+.badge{
+  background-color: #ca1914;
+  align-items: stretch;
 }
