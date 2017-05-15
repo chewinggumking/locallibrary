@@ -3,7 +3,7 @@
 
 <h1> Update Author Here</h1>
 
-<form action="" method="POST">
+<form action="?next={{request.path}}" method="POST">
     {% csrf_token %}
     <table>
       {{ form.as_table }}
