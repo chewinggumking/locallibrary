@@ -17,3 +17,12 @@
 .errorlist {
   color: #ff0000;
 }
+
+.table-head {
+  text-align: center;
+
+}
+
+.badge {
+  padding-left: 20em;
+}

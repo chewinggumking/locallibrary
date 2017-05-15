@@ -7,15 +7,31 @@
 <h1>Author List</h1>
 
    {% if author_list %}
-   <ul>
+   <table class="table table-bordered table-hover">
+          <tr class="table-head">
+          <th >Author</th>
+          <th >Update</th>
+          <th >Delete</th>
+          </tr>
 
      {% for author in author_list %}
-     <li>
-       <a href="{{ author.get_absolute_url }}">{{ author.first_name }} {{author.last_name}}</a>
-     </li>
+    <tr>
+       <td><a href="{{ author.get_absolute_url }}">{{ author.first_name }} {{author.last_name}}
+       <span class="badge">{{author.get_books.count}}</span>
+       </a>
+       </td>
+       <td><a href="{{ author.get_absolute_url }}/update" class="btn btn-default">
+         <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+       </a>
+     </td>
+       <td><a href="{{ author.get_absolute_url }}/delete" class="btn btn-danger">
+         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+       </a>
+     </td>
+    </tr>
      {% endfor %}
 
-   </ul>
+   </table>
    {% else %}
      <p>There are no Auhors in our records.</p>
    {% endif %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %} {{page_title}} {% endblock title %} 
+{% block title %} {{page_title}} {% endblock title %}
 
 {% block content %}
 
@@ -12,6 +12,7 @@
      {% for book in book_list %}
      <li>
        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+       <a href="{{ book.get_absolute_url }}/update/">Update</a>
      </li>
      {% endfor %}
 

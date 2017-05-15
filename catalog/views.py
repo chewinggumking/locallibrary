@@ -104,9 +104,10 @@ class AuthorDelete(DeleteView):
     model = Author
     success_url = reverse_lazy('authors')
 
+class BookCreate(CreateView):
+    model = Book
+    fields = '__all__'
 
-# def helloWorld(request):
-#     message_to_u = """<h1>HELLO WORLD</h1>
-#     <p>This is the catalog app landing page</p>
-#     """
-#     return HttpResponse(message_to_u)
+class BookUpdate(UpdateView):
+    model = Book
+    fields = '__all__'
