@@ -33,5 +33,5 @@
 
 .badge{
   background-color: #ca1914;
-  align-items: stretch;
+  float: right;
 }

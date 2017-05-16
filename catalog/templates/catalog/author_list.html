@@ -20,11 +20,11 @@
        <span class="badge">{{author.get_books.count}}</span>
        </a>
        </td>
-       <td><a href="{{ author.get_absolute_url }}/update" class="btn btn-default">
+       <td><a href="{% url 'author-update' author.id %}" class="btn btn-default">
          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
        </a>
      </td>
-       <td><a href="{{ author.get_absolute_url }}/delete" class="btn btn-danger">
+       <td><a href="{% url 'author-delete' author.id %}" class="btn btn-danger">
          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
        </a>
      </td>
